@@ -1,0 +1,37 @@
+<div class="container-fluid boxsize">
+  <div class="row justify-content-center h-100">
+    <div class="col-md-6 my-auto">
+      <div class="row p-5 bg-white">
+        <div class="col-md-12 text-center">
+          <img src="../../assets/logo.png" width="20%" alt="">
+        </div>
+        <div class="col-md-12">
+          <form #loginForm="ngForm">
+            <h3 class="w-100 text-center">Login</h3>
+            <div class="form-group">
+
+              <app-email (emailid)="getemailid($event)"></app-email>
+              <div *ngIf="this.showerror" class="alert alert-danger mt-2" role="alert">
+                Please enter the Email ID
+              </div>
+
+            </div>
+            <div class="form-group">
+              <app-password (passwordvalue)="getpassword($event)"></app-password>
+              <div *ngIf="this.showerror" class="alert alert-danger mt-2" role="alert">
+                Please enter the Password
+              </div>
+
+            </div>
+            <div class="text-right">
+              <app-submit (click)="submitform()"></app-submit>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
